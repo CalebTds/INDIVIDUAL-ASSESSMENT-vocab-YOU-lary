@@ -1,8 +1,10 @@
-import { getItems, deleteItem } from '../api/ItemsData';
+import { getItems, deleteItem, getSingleItem } from '../api/ItemsData';
 import { showItems } from '../pages/items';
 import { getStores } from '../api/StoreData';
 import { showStores } from '../pages/stores';
-import { getItemDetails } from '../api/InventoryData';
+import { getItemDetails, deleteStoreItemsRelationship } from '../api/InventoryData';
+import addItemForm from '../components/forms/addItemForm';
+import viewItem from '../pages/viewItem';
 
 const domEvents = () => {
   document.querySelector('#main-container').addEventListener('click', (e) => {
@@ -27,7 +29,7 @@ const domEvents = () => {
     if (e.target.id.includes('edit-item-btn')) {
       const [, firebaseKey] = e.target.id.split('--');
 
-      getSingleItem(firebaseKey).then((itemObj) => addBookForm(itemObj));
+      getSingleItem(firebaseKey).then((itemObj) => addItemForm(itemObj));
     // getSingleItem(firebaseKey).then(addItemForm); // using the callback method
     }
     // TODO: CLICK EVENT FOR VIEW ITEM DETAILS

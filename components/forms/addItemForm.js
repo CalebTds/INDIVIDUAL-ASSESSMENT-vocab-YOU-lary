@@ -37,4 +37,4 @@ const addItemForm = (obj = {}) => {
   selectStore(`${obj.store_id || ''}`);
 };
 
-export default addItemForm;
+export default { addItemForm };

@@ -19,8 +19,8 @@ const formEvents = () => {
         price: document.querySelector('#price').value,
         store_id: document.querySelector('#store_id').value,
         sale: document.querySelector('#sale').checked,
-        firebaseKey,
-};
+        firebaseKey
+      };
 
       updateItem(payload).then(() => {
         getItems().then(showItems);
@@ -31,7 +31,7 @@ const formEvents = () => {
       console.warn('CLICKED SUBMIT STORE');
     }
     // FIXME:ADD CLICK EVENT FOR EDITING A STORE
-});
+  });
 };
 
 export default formEvents;

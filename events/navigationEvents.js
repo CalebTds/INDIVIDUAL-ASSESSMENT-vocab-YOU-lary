@@ -1,6 +1,6 @@
 import { signOut } from '../utils/auth';
 import { showItems } from '../pages/items';
-import { getItems, ItemsOnSale } from '../api/ItemsData';
+import { getItems, itemsOnSale } from '../api/ItemsData';
 
 // navigation events
 const navigationEvents = () => {
@@ -10,7 +10,7 @@ const navigationEvents = () => {
 
   // TODO: ITEMS ON SALE
   document.querySelector('#sale-items').addEventListener('click', () => {
-    ItemsOnSale().then(showItems);
+    itemsOnSale().then(showItems);
   });
 
   // TODO: ALL BOOKS
